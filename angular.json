@@ -39,9 +39,14 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/flex-splitter-directive/styles.min.css",
+              "node_modules/ag-grid-community/styles/ag-grid.css",
+              "node_modules/ag-grid-community/styles/ag-theme-alpine.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/flex-splitter-directive/index.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -105,5 +110,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
