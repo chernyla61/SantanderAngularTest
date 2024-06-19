@@ -26,7 +26,8 @@
       "@components": ["components"],
       "@services": ["services"],
       "@models": ["models"],
-      "@stores": ["stores"]
+      "@stores": ["stores"],
+      "@test":["test"],
     }
   },
   "angularCompilerOptions": {

@@ -1,3 +1,9 @@
+:host{
+    display:flex;
+    flex-direction:column;
+    flex-grow:1;
+}
+
 .panel {
     border: 1px solid #d3d3d3;
     border-radius: 4px;
@@ -9,9 +15,9 @@
 }
 
 .left-panel {
-    width: 50%;
+    width: 60%;
 }
 
 .right-panel {
-    width: 50%;
+    width: 40%;
 }

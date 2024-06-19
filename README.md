@@ -1,6 +1,10 @@
 # SantanderAngularTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3. Node version 20.11.1, NPM version 10.2.4.
+
+## Features
+
+Responsive Design, Flexbox CSS, Master/Detail screen layout, Ag-Grid, RxJs Observable data stores.
 
 ## Development server
 

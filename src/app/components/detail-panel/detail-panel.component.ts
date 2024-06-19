@@ -11,7 +11,7 @@ import { PhotoItemStore } from '@stores';
 export class DetailPanelComponent implements OnInit, OnDestroy {
   private _subscriptions: Subscription[] = [];
   
-  public photo:IPhoto
+  public photo:IPhoto;
   
   constructor(
     private _photoItemStore: PhotoItemStore,

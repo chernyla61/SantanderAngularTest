@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { AppTestModule } from '@test';
 import { DetailPanelComponent } from './detail-panel.component';
 
 describe('DetailPanelComponent', () => {
@@ -8,6 +8,7 @@ describe('DetailPanelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [AppTestModule],
       declarations: [DetailPanelComponent]
     })
     .compileComponents();
