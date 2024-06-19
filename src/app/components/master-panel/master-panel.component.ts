@@ -62,9 +62,10 @@ export class MasterPanelComponent implements OnInit, OnDestroy {
       { headerName: 'Photo ID', field: 'id', width:120 },
       { headerName: 'Thumbnail', 
         field: 'thumbnailUrl', 
-        cellRenderer: (params: any) => `<img src="${params.value}" alt="${params.data.title}" style="height: 50px; width: auto;">` 
+        cellRenderer: (params: any) => `<img src="${params.value}" alt="${params.data.title}" style="height: 50px; width: auto;">`,
+        width: 120
       },
-      { headerName: 'Title', field: 'title' },
+      { headerName: 'Title', field: 'title', flex: 1 },
     ]
   }
 
