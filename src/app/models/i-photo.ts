@@ -4,6 +4,4 @@ export interface IPhoto {
     title: string;
     url: string;
     thumbnailUrl: string;
-    photo: Blob;
-    thumbnai: Blob;
 }

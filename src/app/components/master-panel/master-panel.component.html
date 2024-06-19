@@ -2,8 +2,9 @@
     class="ag-theme-alpine flex-grid"
     [rowData]="items"
     [columnDefs]="colDefs"
-    (rowSelected)="rowSelected($event)"
+    (rowClicked)="rowClicked($event)"
     (gridReady)="gridReady($event)"
+    [defaultColDef]="defaultColDef"
 >
 </ag-grid-angular>
 

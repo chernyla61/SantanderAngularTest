@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { tap, Subscription } from 'rxjs';
 import { IPhoto } from '@models';
 import { PhotoListStore, PhotoItemStore } from '@stores';
-import { GridOptions, ColDef, GridApi, GridReadyEvent, RowSelectedEvent } from 'ag-grid-community'
+import { GridOptions, ColDef, GridApi, GridReadyEvent, RowClickedEvent } from 'ag-grid-community'
 
 @Component({
   selector: 'app-master-panel',
@@ -15,6 +15,14 @@ export class MasterPanelComponent implements OnInit, OnDestroy {
   public items: IPhoto[] = [];
   public colDefs: ColDef[] = [];
   public gridApi: GridApi;
+
+  public   defaultColDef: ColDef = {
+    sortable: true,
+    filter: true,
+    resizable: true,
+    floatingFilter: true,
+  };
+
 
   constructor(
     private _photoListStore: PhotoListStore,
@@ -31,7 +39,7 @@ export class MasterPanelComponent implements OnInit, OnDestroy {
 
   gridReady($event: GridReadyEvent) {
     this.gridApi = $event.api;
-
+  
     this._subscriptions.push(
       this._photoListStore.getList$().pipe(
         tap(arr => {
@@ -44,16 +52,19 @@ export class MasterPanelComponent implements OnInit, OnDestroy {
 
   }
 
-  rowSelected($event: RowSelectedEvent) {
-
+  rowClicked($event: RowClickedEvent) {
+    this._photoItemStore.setItem$($event.data);
   }
 
   getColDefs(): ColDef[] {
     return [
-      { headerName: 'Album ID', field: 'albumId' },
-      { headerName: 'Photo ID', field: 'id' },
+      { headerName: 'Album ID', field: 'albumId', width:120},
+      { headerName: 'Photo ID', field: 'id', width:120 },
+      { headerName: 'Thumbnail', 
+        field: 'thumbnailUrl', 
+        cellRenderer: (params: any) => `<img src="${params.value}" alt="${params.data.title}" style="height: 50px; width: auto;">` 
+      },
       { headerName: 'Title', field: 'title' },
-      { headerName: 'thumbnail', field: 'thumbnai' }
     ]
   }
 
