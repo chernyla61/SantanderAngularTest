@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/master-panel/master-panel.component.scss"],
+  "sourcesContent": [":host{\r\n    display:flex;\r\n    flex-direction: column;\r\n    flex-grow:1;\r\n}\r\n\r\n.flex-grid{\r\n    flex-grow:1;\r\n}"],
+  "mappings": "AAAA,MACI,QAAA,KACA,eAAA,OACA,UAAA,EAGJ,CAAA,UACI,UAAA",
+  "names": []
+}
