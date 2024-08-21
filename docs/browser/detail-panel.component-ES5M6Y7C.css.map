@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/components/detail-panel/detail-panel.component.scss"],
-  "sourcesContent": [":host{\r\n    flex-grow: 1;\r\n    display: flex;\r\n    flex-direction: column;\r\n\r\n}\r\n\r\n.screen-layout{\r\n    flex-grow: 1;\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding:10px;\r\n    overflow:auto;\r\n    background-color: #e0ecde; \r\n}\r\n\r\n.item-row{\r\n    margin-top:10px;\r\n}\r\n\r\n.title{\r\n    color:#230064;\r\n    width:150px;\r\n    text-align: right;\r\n}\r\n\r\n.value{\r\n    border:1px solid #808080;\r\n    border-radius: 3px;\r\n    background-color: white;\r\n    margin-left: 10px;\r\n    padding:5px;\r\n    width:calc(100% - 150px);\r\n}\r\n\r\n.photo {\r\n    height:90%;\r\n    width:90%;\r\n    margin:auto;\r\n    background-size: cover;\r\n    background-position: center;\r\n}\r\n.img-frame {\r\n    display:flex;\r\n    overflow:auto;\r\n    padding:10px;\r\n    justify-content: center;\r\n    align-content: center;\r\n}\r\n.img-row{\r\n    flex-grow:1;\r\n}\r\n"],
-  "mappings": "AAAA,MACI,UAAA,EACA,QAAA,KACA,eAAA,OAIJ,CAAA,cACI,UAAA,EACA,QAAA,KACA,eAAA,OAVJ,QAWI,KACA,SAAA,KACA,iBAAA,QAGJ,CAAA,SACI,WAAA,KAGJ,CAAA,MACI,MAAA,QACA,MAAA,MACA,WAAA,MAGJ,CAAA,MACI,OAAA,IAAA,MAAA,QA3BJ,cA4BI,IACA,iBAAA,KACA,YAAA,KA9BJ,QA+BI,IACA,MAAA,KAAA,KAAA,EAAA,OAGJ,CAAA,MACI,OAAA,IACA,MAAA,IArCJ,OAsCI,KACA,gBAAA,MACA,oBAAA,OAEJ,CAAA,UACI,QAAA,KACA,SAAA,KA5CJ,QA6CI,KACA,gBAAA,OACA,cAAA,OAEJ,CAAA,QACI,UAAA",
-  "names": []
-}
