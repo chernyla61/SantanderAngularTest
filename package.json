@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "karma start",
     "e2e": "ng e2e",
-    "build-to-docs": "ng build --configuration production --output-path=/docs --base-href=/SantanderAngularTest/"
+    "build-to-docs": "ng build --configuration production --output-path=docs --base-href=/SantanderAngularTest/"
   },
   "private": true,
   "dependencies": {

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/app.component.scss"],
+  "sourcesContent": [":host{\r\n    display:flex;\r\n    flex-direction:column;\r\n    flex-grow:1;\r\n}\r\n\r\n.panel {\r\n    border: 1px solid #d3d3d3;\r\n    border-radius: 4px;\r\n    position: relative;\r\n    overflow: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    flex-grow: 1;\r\n}\r\n\r\n.left-panel {\r\n    width: 60%;\r\n}\r\n\r\n.right-panel {\r\n    width: 40%;\r\n}\r\n.page-title{\r\n    text-align: center;\r\n}"],
+  "mappings": "AAAA,MACI,QAAA,KACA,eAAA,OACA,UAAA,EAGJ,CAAA,MACI,OAAA,IAAA,MAAA,QAPJ,cAQI,IACA,SAAA,SACA,SAAA,KACA,QAAA,KACA,eAAA,OACA,UAAA,EAGJ,CAAA,WACI,MAAA,IAGJ,CAAA,YACI,MAAA,IAEJ,CAAA,WACI,WAAA",
+  "names": []
+}
