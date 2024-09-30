@@ -15,7 +15,4 @@ export class PlaceholderPhotosService {
     return this.http.get<IPhoto[]>(this.apiUrl);
   }
 
-  getBlob(url: string): Observable<Blob> {
-    return this.http.get(url, { responseType: 'blob' });
-  }
 }
