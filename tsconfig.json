@@ -17,10 +17,6 @@
     "target": "ES2022",
     "module": "es2015",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ],
     "baseUrl": "./src/app",
     "paths": {
       "@components": [
