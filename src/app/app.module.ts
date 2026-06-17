@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient, HttpClientModule } from '@angular/common/http'; 
-import { AgGridModule } from 'ag-grid-angular';
+import { provideHttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { MasterPanelComponent } from './components/master-panel/master-panel.component';
 import { DetailPanelComponent } from './components/detail-panel/detail-panel.component';
 
@@ -12,12 +10,11 @@ import { DetailPanelComponent } from './components/detail-panel/detail-panel.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    AgGridModule,
-    AppComponent,
     MasterPanelComponent,
     DetailPanelComponent,
   ],
-  providers: []
+  providers: [
+    provideHttpClient(),
+  ]
 })
 export class AppModule { }

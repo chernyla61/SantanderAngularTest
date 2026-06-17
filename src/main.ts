@@ -1,7 +1,18 @@
-import { provideZoneChangeDetection } from "@angular/core";
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { provideZoneChangeDetection, importProvidersFrom } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app.component';
+import { AppRoutingModule } from './app/app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { AgGridModule } from 'ag-grid-angular';
+import { provideHttpClient } from '@angular/common/http';
+import { ModuleRegistry, AllCommunityModule } from 'ag-grid-community';
 
-import { AppModule } from './app/app.module';
+ModuleRegistry.registerModules([ AllCommunityModule ]);
 
-platformBrowserDynamic().bootstrapModule(AppModule, { applicationProviders: [provideZoneChangeDetection({ eventCoalescing: true })], })
-  .catch(err => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideHttpClient(),
+    importProvidersFrom(BrowserModule, AppRoutingModule, AgGridModule),
+  ]
+}).catch(err => console.error(err));

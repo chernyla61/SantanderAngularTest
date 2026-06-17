@@ -1,28 +1,32 @@
 <div class="screen-layout">
   <div class="flex-row item-row">
-    <div class="title">Album:</div>
-    <div class="value">{{photo?.albumId}}</div>
-  </div>
-  <div class="flex-row item-row">
     <div class="title">ID:</div>
     <div class="value">{{photo?.id}}</div>
   </div>
   <div class="flex-row item-row">
-    <div class="title">Title:</div>
-    <div class="value">{{photo?.title}}</div>
+    <div class="title">Author:</div>
+    <div class="value">{{photo?.author}}</div>
   </div>
   <div class="flex-row item-row">
-    <div class="title">Thumbnail URL:</div>
-    <div class="value">{{photo?.thumbnailUrl}}</div>
+    <div class="title">Width:</div>
+    <div class="value">{{photo?.width}}</div>
   </div>
   <div class="flex-row item-row">
-    <div class="title">Photo URL:</div>
+    <div class="title">Height:</div>
+    <div class="value">{{photo?.height}}</div>
+  </div>
+  <div class="flex-row item-row">
+    <div class="title">Source URL:</div>
     <div class="value">{{photo?.url}}</div>
+  </div>
+  <div class="flex-row item-row">
+    <div class="title">Download URL:</div>
+    <div class="value">{{photo?.download_url}}</div>
   </div>
   <div class="flex-row item-row img-row">
     <div class="title">Photo:</div>
     <div class="value img-frame">
-      <div *ngIf="photo" [style.backgroundImage]="'url(' + photo?.url + ')'" class="photo"></div>
+      <div *ngIf="photo" [style.backgroundImage]="'url(https://picsum.photos/id/' + photo?.id + '/800/600)'" class="photo"></div>
     </div>
   </div>
 </div>

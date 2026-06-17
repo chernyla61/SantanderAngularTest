@@ -2,7 +2,7 @@
 
 Project designed and developed by Vladimir Chernyakhovskiy for Santander position.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3. Node version 20.11.1, NPM version 10.2.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version Angular Core: 22.0.1. Node version v22.22.3, NPM version 10.9.8
 
 ## Features
 

@@ -1,7 +1,8 @@
-export interface IPhoto {
-    albumId: number;
-    id: number;
-    title: string;
+export interface IPicsumImage {
+    id: string;
+    author: string;
+    width: number;
+    height: number;
     url: string;
-    thumbnailUrl: string;
+    download_url: string;
 }

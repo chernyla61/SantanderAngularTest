@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/
 import { CommonModule } from '@angular/common';
 import { AgGridModule } from 'ag-grid-angular';
 import { tap, Subscription } from 'rxjs';
-import { IPhoto } from '@models';
+import { IPicsumImage } from '@models';
 import { PhotoListStore, PhotoItemStore } from '@stores';
 import { GridOptions, ColDef, GridApi, GridReadyEvent, RowClickedEvent } from 'ag-grid-community'
 
@@ -17,7 +17,7 @@ import { GridOptions, ColDef, GridApi, GridReadyEvent, RowClickedEvent } from 'a
 export class MasterPanelComponent implements OnInit, OnDestroy {
   private _subscriptions: Subscription[] = [];
 
-  public items: IPhoto[] = [];
+  public items: IPicsumImage[] = [];
   public colDefs: ColDef[] = [];
   public gridApi: GridApi;
 
@@ -51,8 +51,11 @@ export class MasterPanelComponent implements OnInit, OnDestroy {
           this.items = arr;
           console.debug("Got Array from API:", arr);
         }),
-
-      ).subscribe(),
+      ).subscribe({
+        next: (data) => console.log('Photos loaded:', data.length),
+        error: (err) => console.error('Error loading photos:', err),
+        complete: () => console.log('Photos request completed')
+      })
     )
 
   }
@@ -63,14 +66,17 @@ export class MasterPanelComponent implements OnInit, OnDestroy {
 
   getColDefs(): ColDef[] {
     return [
-      { headerName: 'Album ID', field: 'albumId', width:120},
-      { headerName: 'Photo ID', field: 'id', width:120 },
+      { headerName: 'ID', field: 'id', width:120},
+      { headerName: 'Author', field: 'author', width:200 },
       { headerName: 'Thumbnail', 
-        field: 'thumbnailUrl', 
-        cellRenderer: (params: any) => `<img src="${params.value}" alt="${params.data.title}" style="height: 50px; width: auto;">`,
+        field: 'download_url', 
+        cellRenderer: (params: any) => `<img src="https://picsum.photos/id/${params.data.id}/300/300" alt="Photo ${params.data.id}" style="height: 50px; width: auto;">`,
         width: 120
       },
-      { headerName: 'Title', field: 'title', flex: 1 },
+      { headerName: 'Dimensions', field: 'width', 
+        valueGetter: (params: any) => `${params.data.width}x${params.data.height}`,
+        width: 120
+      },
     ]
   }
 

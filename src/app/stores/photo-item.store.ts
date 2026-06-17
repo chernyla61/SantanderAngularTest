@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { Observable, of, tap } from 'rxjs';
 import { StoreBase, IItemStore } from './_store-base';
 import { PhotoListStore } from './photo-list.store';
-import { IPhoto } from '@models';
+import { IPicsumImage } from '@models';
 import { PlaceholderPhotosService } from '@services';
 
 @Injectable({
     providedIn: 'root'
 })
 
-export class PhotoItemStore extends StoreBase<IPhoto> implements  IItemStore<IPhoto>{
+export class PhotoItemStore extends StoreBase<IPicsumImage> implements  IItemStore<IPicsumImage>{
     private _reqSubmitted: boolean = false;
     constructor(
         private _photoApi: PlaceholderPhotosService
@@ -18,7 +18,7 @@ export class PhotoItemStore extends StoreBase<IPhoto> implements  IItemStore<IPh
 
     }
 
-    setItem$(item:IPhoto):Observable<IPhoto>{
+    setItem$(item:IPicsumImage):Observable<IPicsumImage>{
         this.setState(item);
         return this.stateChanged$
     }

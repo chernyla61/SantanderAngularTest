@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { tap, Subscription } from 'rxjs';
-import { IPhoto } from '@models';
+import { IPicsumImage } from '@models';
 import { PhotoItemStore } from '@stores';
 
 @Component({
@@ -15,7 +15,7 @@ import { PhotoItemStore } from '@stores';
 export class DetailPanelComponent implements OnInit, OnDestroy {
   private _subscriptions: Subscription[] = [];
   
-  public photo:IPhoto;
+  public photo:IPicsumImage;
   
   constructor(
     private _photoItemStore: PhotoItemStore,

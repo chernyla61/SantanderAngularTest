@@ -1,19 +1,15 @@
 import {NgModule,CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core'
 import { AppModule } from '../app.module';
-import { HttpClientTestingModule } from '@angular/common/http/testing'
-import { RouterTestingModule } from '@angular/router/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { PlaceholderPhotosService } from '@services'
 import { PhotoItemStore, PhotoListStore } from '@stores'
-
-
 
 @NgModule({
   imports: [
     AppModule,
-    RouterTestingModule,
-    HttpClientTestingModule,
   ],
   providers: [
+    provideHttpClientTesting(),
     PlaceholderPhotosService,
     PhotoItemStore,
     PhotoListStore,

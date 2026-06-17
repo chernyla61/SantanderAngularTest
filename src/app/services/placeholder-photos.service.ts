@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IPhoto } from "@models";
+import { IPicsumImage } from "@models";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlaceholderPhotosService {
-  private apiUrl = 'https://jsonplaceholder.typicode.com/photos';
+  private apiUrl = 'https://picsum.photos/v2/list?limit=100&page=1';
 
   constructor(private http: HttpClient) { }
 
-  getPhotos(): Observable<IPhoto[]> {
-    return this.http.get<IPhoto[]>(this.apiUrl);
+  getPhotos(): Observable<IPicsumImage[]> {
+    return this.http.get<IPicsumImage[]>(this.apiUrl);
   }
 
-  getBlob(url: string): Observable<Blob> {
-    return this.http.get(url, { responseType: 'blob' });
+  getImage(id: string): Observable<Blob> {
+    return this.http.get(`https://picsum.photos/id/${id}/300/300`, { responseType: 'blob' });
   }
 }
