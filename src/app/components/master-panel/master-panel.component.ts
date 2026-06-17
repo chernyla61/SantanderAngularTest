@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AgGridModule } from 'ag-grid-angular';
 import { tap, Subscription } from 'rxjs';
 import { IPhoto } from '@models';
 import { PhotoListStore, PhotoItemStore } from '@stores';
@@ -8,7 +10,9 @@ import { GridOptions, ColDef, GridApi, GridReadyEvent, RowClickedEvent } from 'a
   selector: 'app-master-panel',
   templateUrl: './master-panel.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,
-  styleUrls: ['./master-panel.component.scss']
+  styleUrls: ['./master-panel.component.scss'],
+  standalone: true,
+  imports: [CommonModule, AgGridModule]
 })
 export class MasterPanelComponent implements OnInit, OnDestroy {
   private _subscriptions: Subscription[] = [];

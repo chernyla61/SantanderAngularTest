@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { tap, Subscription } from 'rxjs';
 import { IPhoto } from '@models';
 import { PhotoItemStore } from '@stores';
@@ -7,7 +8,9 @@ import { PhotoItemStore } from '@stores';
   selector: 'app-detail-panel',
   templateUrl: './detail-panel.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,
-  styleUrls: ['./detail-panel.component.scss']
+  styleUrls: ['./detail-panel.component.scss'],
+  standalone: true,
+  imports: [CommonModule]
 })
 export class DetailPanelComponent implements OnInit, OnDestroy {
   private _subscriptions: Subscription[] = [];
