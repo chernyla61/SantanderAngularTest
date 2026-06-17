@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { tap, Subscription } from 'rxjs';
 import { IPhoto } from '@models';
 import { PhotoListStore, PhotoItemStore } from '@stores';
@@ -7,7 +7,8 @@ import { GridOptions, ColDef, GridApi, GridReadyEvent, RowClickedEvent } from 'a
 @Component({
   selector: 'app-master-panel',
   templateUrl: './master-panel.component.html',
-  styleUrl: './master-panel.component.scss'
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrls: ['./master-panel.component.scss']
 })
 export class MasterPanelComponent implements OnInit, OnDestroy {
   private _subscriptions: Subscription[] = [];
