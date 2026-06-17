@@ -1,16 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { AppTestModule } from '@test';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        AppTestModule
-      ],
-      declarations: [
         AppComponent
-      ],
+      ]
     }).compileComponents();
   });
 
@@ -30,6 +26,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Santander Angular Task');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Santander Angular Test');
   });
 });

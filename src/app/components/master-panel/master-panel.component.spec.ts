@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AppTestModule } from '@test';
 import { MasterPanelComponent } from './master-panel.component';
 
 describe('MasterPanelComponent', () => {
@@ -8,8 +7,7 @@ describe('MasterPanelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppTestModule],
-      declarations: [MasterPanelComponent]
+      imports: [ MasterPanelComponent ]
     })
     .compileComponents();
 

@@ -9,7 +9,6 @@ import { MasterPanelComponent } from './components/master-panel/master-panel.com
 import { DetailPanelComponent } from './components/detail-panel/detail-panel.component';
 
 @NgModule({
-  declarations: [],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,7 +18,6 @@ import { DetailPanelComponent } from './components/detail-panel/detail-panel.com
     MasterPanelComponent,
     DetailPanelComponent,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: []
 })
 export class AppModule { }
