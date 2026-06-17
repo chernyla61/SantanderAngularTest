@@ -9,16 +9,15 @@ import { MasterPanelComponent } from './components/master-panel/master-panel.com
 import { DetailPanelComponent } from './components/detail-panel/detail-panel.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MasterPanelComponent,
-    DetailPanelComponent,
-  ],
+  declarations: [],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     AgGridModule,
+    AppComponent,
+    MasterPanelComponent,
+    DetailPanelComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
